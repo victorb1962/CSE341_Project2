@@ -1,4 +1,4 @@
-# Final Project: Week 9 - 14
+# Final Project: Week 9 - 14 
 ## Magazine Subscription API
 
 ### Project Plan: https://github.com/victorb1962/CSE341-Project-Final/blob/main/docs/CSE341_Group%207_Final%20Team%20Project%20Proposal.pdf
