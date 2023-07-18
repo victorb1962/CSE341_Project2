@@ -8,4 +8,4 @@
   },
   "publisher": "abc-subscription.media",
   "url": "abc-subscription.media/helloworld.com"
-}
+} 

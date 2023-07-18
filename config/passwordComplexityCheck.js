@@ -7,7 +7,7 @@ const complexityOptions = {
   numeric: 1,
   symbol: 1,
   requirementCount: 4
-};
+}; 
 
 module.exports.passwordPass = (passwordToCheck) => {
   return passwordComplexity(complexityOptions, 'Password').validate(passwordToCheck);

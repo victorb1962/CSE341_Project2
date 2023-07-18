@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-//routes
+//routes 
 router.use('/', require('./swagger'));  // use swagger routes located at \routes\swagger.js
 router.use('/magazine', require('./magazine'));
 router.use('/subscriber', require('./subscriber'));

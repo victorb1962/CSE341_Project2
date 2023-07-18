@@ -4,7 +4,7 @@
     "title": "CSE341 Portfolio - Project-Final",
     "description": "API for a Magazine Subscription App",
     "version": "1.0.0"
-  },
+  }, 
   
   "host": "localhost:3000",
   "basePath": "/",
@@ -109,7 +109,7 @@
                   "example": 15.95
                 },
                 "pubDate": {
-                  "example": "any",
+                  "example": "any"
                 },
                 "publisher": {
                   "example": "any"
@@ -187,7 +187,7 @@
                   "example": "1.23"
                 },
                 "pubDate": {
-                  "example": "any",
+                  "example": "any"
                 },
                 "publisher": {
                   "example": "any"

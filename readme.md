@@ -31,7 +31,7 @@ Run npm install and npm start from the backend folder in the terminal
 - npm run lint
 - npm run format
 
-- npm start
+- npm start 
 
 ## Environment variables
 

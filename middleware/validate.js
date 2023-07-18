@@ -1,4 +1,4 @@
-const validator = require('../config/validate');
+const validator = require('../config/validate'); 
 
 const saveSubscriber = (req, res, next) => {
   const validationRule = {

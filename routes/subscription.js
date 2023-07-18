@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router(); 
 
 const subscriptionController = require('../controllers/subscription');
 // const validation = require('../middleware/validate');

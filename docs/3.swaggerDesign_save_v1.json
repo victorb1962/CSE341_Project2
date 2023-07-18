@@ -4,7 +4,7 @@
     "title": "CSE341 Portfolio - Project-Final",
     "description": "API for a Magazine Subscription App",
     "version": "1.0.0"
-  },
+  }, 
   
   "host": "localhost:3000",
   "basePath": "/",
