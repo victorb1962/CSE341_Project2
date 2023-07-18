@@ -1,47 +1,48 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Vics CSE341 Portfolio - Project 2",
-    "description": "Artwork & Art Curator APIs",
+    "title": "CSE341 Portfolio - Project-Final",
+    "description": "API for a Magazine Subscription App",
     "version": "1.0.0"
   },
-  "host": "victor-341w05.onrender.com",
+  
+  "host": "localhost:3000",
   "basePath": "/",
+  
   "tags": [
     {
-      "name": "Contact",
-      "description": "Requests related to contacts (Requires Log in to access)"
+      "name": "Magazine",
+      "description": "Requests related to magazines (Requires Log in to access)"
     },
     {
-      "name": "Artwork",
-      "description": "Requests related to artwork (Requires Log in to access)"
+      "name": "Subscriber",
+      "description": "Requests related to subscribers (Requires Log in to access)"
     },
     {
-      "name": "Not Yet Implemented",
-      "description": "These API endpoints are designed and will be created in the near future"
+      "name": "Subscription",
+      "description": "Requests related to subscription"
+    },
+    {
+      "name": "Miscellaneous",
+      "description": "These are miscellaneous API endpoints completed or yet to be completed"
     }
   ],
+  
   "schemes": [
-    "https"
+    "http"
   ],
+  
   "paths": {
     "/api-docs": {
       "get": {
-        "description": "Route to the Swagger docs (Requires Log in to access)",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/auth": {
-      "get": {
-        "description": "Sends the authorization request to Github",
+        "description": "Route to the Swagger docs",
         "parameters": [],
         "responses": {}
       }
     },
     "/": {
       "get": {
-        "description": "Sends to a log-in page",
+        "description": "Send to a log-in page",
         "parameters": [],
         "responses": {}
       }
@@ -55,15 +56,15 @@
     },
     "/auth/error": {
       "get": {
-        "description": "Issues an error if authentication fails",
+        "description": "Issue an error if authentication fails",
         "parameters": [],
         "responses": {}
       }
     },
     
-    "/artwork/": {
+    "/magazine/": {
       "get": {
-        "tags": ["Artwork"],
+        "tags": ["Magazine"],
         "description": "",
         "produces": [
           "application/json"
@@ -79,7 +80,7 @@
         }
       },
       "post": {
-        "tags": ["Artwork"],
+        "tags": ["Magazine"],
         "description": "",
         "parameters": [
           {
@@ -88,29 +89,26 @@
             "schema": {
               "type": "object",
               "properties": {
-                "artTitle": {
+                "magazineKey": {
+                  "example": 99
+                },
+                "title": {
                   "example": "any"
                 },
-                "artYear": {
+                "category": {
                   "example": "any"
                 },
-                "artPeriod": {
+                "price": {
+                  "example": 15.95
+                },
+                "pubDate": {
                   "example": "any"
                 },
-                "artDesc": {
+                "publisher": {
                   "example": "any"
                 },
-                "artType": {
+                "url": {
                   "example": "any"
-                },
-                "artLocation": {
-                  "example": "any"
-                },
-                "artDonated": {
-                  "example": "any"
-                },
-                "skillLevel": {
-                  "artFile": "any"
                 }
               }
             }
@@ -129,9 +127,9 @@
         }
       }
     },
-    "/artwork/{id}": {
+    "/magazine/{id}": {
       "get": {
-        "tags": ["Artwork"],
+        "tags": ["Magazine"],
         "description": "",
         "produces": [
           "application/json"
@@ -154,7 +152,7 @@
         }
       },
       "put": {
-        "tags": ["Artwork"],
+        "tags": ["Magazine"],
         "description": "",
         "parameters": [
           {
@@ -169,29 +167,26 @@
             "schema": {
               "type": "object",
               "properties": {
-                "artTitle": {
+                "magazineKey": {
+                  "example": "1"
+                },
+                "title": {
                   "example": "any"
                 },
-                "artYear": {
+                "category": {
                   "example": "any"
                 },
-                "artPeriod": {
+                "price": {
+                  "example": "1.23"
+                },
+                "pubDate": {
                   "example": "any"
                 },
-                "artDesc": {
+                "publisher": {
                   "example": "any"
                 },
-                "artType": {
+                "url": {
                   "example": "any"
-                },
-                "artLocation": {
-                  "example": "any"
-                },
-                "artDonated": {
-                  "example": "any"
-                },
-                "skillLevel": {
-                  "artFile": "any"
                 }
               }
             }
@@ -210,7 +205,7 @@
         }
       },
       "delete": {
-        "tags": ["Artwork"],
+        "tags": ["Magazine"],
         "description": "",
         "parameters": [
           {
@@ -230,9 +225,10 @@
         }
       }
     },
-    "/contact/": {
+    
+    "/subscriber/": {
       "get": {
-        "tags": ["Contact"],
+        "tags": ["Subscriber"],
         "description": "",
         "produces": [
           "application/json"
@@ -248,7 +244,7 @@
         }
       },
       "post": {
-        "tags": ["Contact"],
+        "tags": ["Subscriber"],
         "description": "",
         "parameters": [
           {
@@ -257,19 +253,19 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
-                  "example": "any"
+                "subscriberKey": {
+                  "example": "1"
                 },
                 "lastName": {
                   "example": "any"
                 },
-                "email": {
+                "firstName": {
                   "example": "any"
                 },
                 "phone": {
                   "example": "any"
                 },
-                "role": {
+                "email": {
                   "example": "any"
                 },
                 "username": {
@@ -286,18 +282,15 @@
           "201": {
             "description": "Created"
           },
-          "412": {
-            "description": "Precondition Failed"
-          },
           "500": {
             "description": "Internal Server Error4"
           }
         }
       }
     },
-    "/contact/{id}": {
+    "/subscriber/{id}": {
       "get": {
-        "tags": ["Contact"],
+        "tags": ["Subscriber"],
         "description": "",
         "produces": [
           "application/json"
@@ -308,7 +301,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Get a specfic contact"
+            "description": "Get a specfic subscriber"
           }
         ],
         "responses": {
@@ -321,7 +314,7 @@
         }
       },
       "put": {
-        "tags": ["Contact"],
+        "tags": ["Subscriber"],
         "description": "",
         "parameters": [
           {
@@ -336,19 +329,19 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
-                  "example": "any"
+                "subscriberKey": {
+                  "example": "1"
                 },
                 "lastName": {
                   "example": "any"
                 },
-                "email": {
+                "firstName": {
                   "example": "any"
                 },
                 "phone": {
                   "example": "any"
                 },
-                "role": {
+                "email": {
                   "example": "any"
                 },
                 "username": {
@@ -374,7 +367,157 @@
         }
       },
       "delete": {
-        "tags": ["Contact"],
+        "tags": ["Subscriber"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error6"
+          }
+        }
+      }
+    },
+    
+    "/subscription/": {
+      "get": {
+        "tags": ["Subscription"],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request3"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Subscription"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "subscriptionKey": {
+                  "example": "1"
+                },
+                "magazineKey": {
+                  "example": "1"
+                },
+                "subscriberKey": {
+                  "example": "1"
+                },
+                "startDate": {
+                  "example": "2011-03-01T00:00:00.000+00:00"
+                },
+                "length": {
+                  "example": "12"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error4"
+          }
+        }
+      }
+    },
+    "/subscription/{id}": {
+      "get": {
+        "tags": ["Subscription"],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Get a specfic subscription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request4"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Subscription"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "subscriptionKey": {
+                  "example": "1"
+                },
+                "magazineKey": {
+                  "example": "1"
+                },
+                "subscriberKey": {
+                  "example": "1"
+                },
+                "startDate": {
+                  "example": "2011-03-01T00:00:00.000+00:00"
+                },
+                "length": {
+                  "example": "12"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error5"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Subscription"],
         "description": "",
         "parameters": [
           {

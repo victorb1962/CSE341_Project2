@@ -1,0 +1,24 @@
+{
+    "subscriber": {
+        "subscriberKey": 9,
+        "lastName": "Banks",
+        "firstName": "Robyn",
+        "phone": "801-542-1234",
+        "email": "robynbanks@wellsfargo.com",
+        "username": "rbanks",
+        "password": "password"
+    },
+    "magazine-list": {
+        "magazine1": {
+            "magazineKey": 1,
+            "title": "Fishing in the Mojave",
+            "category": "Sports, Travel",
+            "price": 13.95,
+            "pubDate" : {
+                "$date": "2011-03-01T08:00:00.000Z"
+              },
+            "publisher": "abc-subscription.media",
+            "url": "abc-subscription.media/fishinginthemojave.com"
+        }   
+    }
+}

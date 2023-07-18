@@ -1,84 +1,110 @@
 // LOCALHOST 
+http://localhost:3000/
+http://localhost:3000/login
+http://localhost:3000/logout
+http://localhost:3000/profile
+
+### GET API-DOCS
 GET http://localhost:3000/api-docs HTTP/1.1
 
-### GET all artwork
-GET http://localhost:3000/artwork/ HTTP/1.1
+### GET all magazine
+GET http://localhost:3000/magazine/ HTTP/1.1
 
-### GET artwork by id
-GET http://localhost:3000/artwork/644f6ca79823b4c1e6920401 HTTP/1.1
+### GET magazine by id
+GET http://localhost:3000/magazine/64a05c66115b238db392355e HTTP/1.1
 
-### CREATE artwork
-POST http://localhost:3000/artwork HTTP/1.1 
-content-type: application/json
+### CREATE magazine
+POST http://localhost:3000/magazine HTTP/1.1 content-type: application/json
+
 {
-"artTitle": "Head of a Woman", "artYear": "1508", "artPeriod": "xxxx xxxxxxxxxxx", "artDesc": "also known as La Scapigliata", "artType": "Oil paint", "artLocation": "Galleria Nazionale di Parma", "artDonated": "", "artFile": "headwoman.jpg"
+"magazineKey": 98, 
+"title": "Victors Book", 
+"category": ["Entertainment", "Travel"], 
+"price": 15.05, 
+"pubDate" : {
+	"$date": "2011-03-01T08:00:00.000Z"
+    },
+"publisher": "victor.media", 
+"url": "abc-subscription.media/victorsbook.com"
 }
 
-### CHANGE artwork by id
-PUT http://localhost:3000/artwork/63f1af8bc8ad51af18312fd0 HTTP/1.1 
-content-type: application/json
+### CHANGE magazine by id
+PUT http://localhost:3000/magazine/64a05c66115b238db392355e HTTP/1.1 content-type: application/json
+
 {
-"artPeriod": "High Renaissance"
+"publisher": "High Renaissance"
 }
 
-### DELETE artwork by id
-DELETE http://localhost:3000/artwork/63e859e9bd16449396cca6ad HTTP/1.1
+### DELETE magazine by id
+DELETE http://localhost:3000/magazine/64af6842e6c0b4f585c6dc69 HTTP/1.1
 
-### Repeat for contact collection.
+### Repeat for subscriber collection.
 
-### GET all contacts
-GET http://localhost:3000/contact/ HTTP/1.1
+### GET all subscriber
+GET http://localhost:3000/subscriber/ HTTP/1.1
 
-### GET contact by id
-GET http://localhost:3000/contact/647590edd000510a473629b3 HTTP/1.1
+### GET subscriber by id
+GET http://localhost:3000/subscriber/647590edd000510a473629b3 HTTP/1.1
 
 
 // PRODUCTION Deploy
 
-GET http://victor-341w05.onrender.com/api-docs HTTP/1.1
+GET http://cse341-final-in8m.onrender.com/api-docs HTTP/1.1
 
-### GET all artwork
-GET https://victor-341w05.onrender.com/artwork
+### GET all magazine
+GET https://cse341-final-in8m.onrender.com/magazine
 
-### GET artwork by id
-GET https://victor-341w05.onrender.com/artwork/644f6c8d9823b4c1e691b60a
+### GET magazine by id
+GET https://cse341-final-in8m.onrender.com/magazine/64a05c66115b238db392355e
 
-### CREATE artwork
-POST https://victor-341w05.onrender.com/artwork HTTP/1.1 
+### CREATE magazine
+POST https://cse341-final-in8m.onrender.com/magazine HTTP/1.1 
+
 content-type: application/json
 {
-"artTitle": "Head of a Woman", "artYear": "1508", "artPeriod": "xxxx xxxxxxxxxxx", "artDesc": "also known as La Scapigliata", "artType": "Oil paint", "artLocation": "Galleria Nazionale di Parma", "artDonated": "", "artFile": "headwoman.jpg"
+"magazineKey": 99, 
+"title": "Victors Book", 
+"category": "Entertainment", 
+"price": 15.05, 
+"pubDate" : {
+	"$date": "2012-02-01T08:00:00.000Z"
+    },
+"publisher": "victor.media", 
+"url": "abc-subscription.media/victorsbook.com"
 }
 
-### CHANGE artwork by id
-PUT https://victor-341w05.onrender.com/artwork/63f1af8bc8ad51af18312fd0 HTTP/1.1 
+### CHANGE magazine by id
+PUT https://cse341-final-in8m.onrender.com/magazine/63f1af8bc8ad51af18312fd0 HTTP/1.1 
+
 content-type: application/json
 {
-"artPeriod": "High Renaissance"
+"publisher": "High Renaissance"
 }
 
-### DELETE artwork by id
-DELETE https://victor-341w05.onrender.com/artwork/63e859e9bd16449396cca6ad HTTP/1.1
+### DELETE magazine by id
+DELETE https://cse341-final-in8m.onrender.com/magazine/63e859e9bd16449396cca6ad HTTP/1.1
 
-### Repeat for contact collection.
+### Repeat for subscriber collection.
 
-### GET all contacts
-GET https://victor-341w05.onrender.com/contacts
+### GET all subscribers
+GET https://cse341-final-in8m.onrender.com/subscriber
 
-### GET contact by id
-GET https://victor-341w05.onrender.com/contacts/646a8ac28b9fb2279db1b82f
+### GET subscriber by id
+GET https://cse341-final-in8m.onrender.com/subscriber/64a05d20115b238db3923569
 
-### CHANGE contact
-PUT https://victor-341w05.onrender.com/artwork/64605f0f470f6bc234fd04cd HTTP/1.1
+### CHANGE subscriber
+PUT https://cse341-final-in8m.onrender.com/magazine/64605f0f470f6bc234fd04cd HTTP/1.1
+
 content-type: application/json
 {
-    "firstName":"Sarah",
+    "subscriberKey": 99,
     "lastName":"Birch",
+    "firstName":"Sarah",
+    "phone":"801-542-9999",
     "email":"sarahB@gmail.com",
-    "phone":"1234567890",
-    "role":"Art Restorer"
+    "username":"sbirch",
+    "password":"password"
 }
 
-### DELETE contact
-DELETE https://victor-341w05.onrender.com/contacts/64605f0f470f6bc234fd04cd HTTP/1.1
-
+### DELETE subscriber
+DELETE https://cse341-final-in8m.onrender.com/subscriber/64605f0f470f6bc234fd04cd HTTP/1.1

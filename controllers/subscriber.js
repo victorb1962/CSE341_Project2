@@ -2,11 +2,11 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 const passwordUtil = require('../config/passwordComplexityCheck');
 
-const getAllContact = (req, res) => {
+const getAllSubscriber = (req, res) => {
   mongodb
     .getDb()
     .db()
-    .collection('contact')
+    .collection('subscriber')
     .find()
     .toArray((err, lists) => {
       if (err) {
@@ -17,16 +17,16 @@ const getAllContact = (req, res) => {
     });
 };
 
-const getContact = (req, res) => {
+const getSubscriber = (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid contact id to find a contact.');
+    res.status(400).json('Must use a valid subscriber id to find a subscriber.');
   }
-  const contactId = new ObjectId(req.params.id);
+  const subscriberId = new ObjectId(req.params.id);
   mongodb
     .getDb()
     .db()
-    .collection('contact')
-    .find({ _id: contactId })
+    .collection('subscriber')
+    .find({ _id: subscriberId })
     .toArray((err, result) => {
       if (err) {
         res.status(400).json({ message: err });
@@ -36,13 +36,12 @@ const getContact = (req, res) => {
     });
 };
 
-const createContact = async (req, res) => {
-  const contact = {
-    firstName: req.body.firstName,
+const createSubscriber = async (req, res) => {
+  const subscriber = {
+    subscriberKey: req.body.subscriberKey,
     lastName: req.body.lastName,
+    firstName: req.body.firstName,
     email: req.body.email,
-    phone: req.body.phone,
-    role: req.body.role,
     username: req.body.username,
     password: req.body.password
   };
@@ -58,17 +57,17 @@ const createContact = async (req, res) => {
     return;
   }
 
-  const response = await mongodb.getDb().db().collection('contact').insertOne(contact);
+  const response = await mongodb.getDb().db().collection('subscriber').insertOne(subscriber);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
-    res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+    res.status(500).json(response.error || 'Some error occurred while creating the subscriber.');
   }
 };
 
-const updateContact = async (req, res) => {
+const updateSubscriber = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid contact id to update a contact.');
+    res.status(400).json('Must use a valid subscriber id to update a subscriber.');
   }
 
   if (!req.body.username || !req.body.password) {
@@ -82,37 +81,35 @@ const updateContact = async (req, res) => {
     return;
   }
 
-  const contactId = new ObjectId(req.params.id);
+  const subscriberId = new ObjectId(req.params.id);
   // be aware of updateOne if you only want to update specific fields
-  const contact = {
-    firstName: req.body.firstName,
+  const subscriber = {
     lastName: req.body.lastName,
+    firstName: req.body.firstName,
     email: req.body.email,
-    phone: req.body.phone,
-    role: req.body.role,
     username: req.body.username,
     password: req.body.password
   };
   const response = await mongodb
     .getDb()
     .db()
-    .collection('contact')
-    .replaceOne({ _id: contactId }, contact);
+    .collection('subscriber')
+    .replaceOne({ _id: subscriberId }, subscriber);
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).send();
   } else {
-    res.status(500).json(response.error || 'Some error occurred while updating the contact.');
+    res.status(500).json(response.error || 'Some error occurred while updating the subscriber.');
   }
 };
 
-const deleteContact = async (req, res) => {
+const deleteSubscriber = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid contact id to delete a contact.');
+    res.status(400).json('Must use a valid subscriber id to delete a subscriber.');
   }
-  const contactId = new ObjectId(req.params.id);
+  const subscriberId = new ObjectId(req.params.id);
 
-  if (!contactId) {
+  if (!subscriberId) {
     res.status(400).send({ message: 'Invalid Id supplied.' });
     return;
   }
@@ -120,22 +117,22 @@ const deleteContact = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db()
-    .collection('contact')
-    .remove({ _id: contactId }, true);
+    .collection('subscriber')
+    .remove({ _id: subscriberId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send();
   } else {
-    res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
+    res.status(500).json(response.error || 'Some error occurred while deleting the subscriber.');
   }
 };
 
 module.exports = {
-  getAllContact,
-  getContact,
-  createContact,
-  updateContact,
-  deleteContact,
-  // loginContact,
-  // logoutContact
+  getAllSubscriber,
+  getSubscriber,
+  createSubscriber,
+  updateSubscriber,
+  deleteSubscriber,
+  // loginSubscriber,
+  // logoutSubscriber
 };

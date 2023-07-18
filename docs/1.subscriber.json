@@ -1,0 +1,65 @@
+[
+	{
+		"subscriberKey" : 1,
+		"lastName" : "Johnston",
+		"firstName" : "Julie",
+		"phone" : "801-542-1234",
+		"email" : "JJohnston@abcdef.com",
+		"username" : "jjohnston",
+		"password" : "password"
+	},
+	{
+		"subscriberKey" : 2,
+		"lastName" : "Anderson",
+		"firstName" : "Albert",
+		"phone" : "801-542-5678",
+		"email" : "AAnderson@abcdef.com",
+		"username" : "aanderson",
+		"password" : "password"
+	},
+	{
+		"subscriberKey" : 3,
+		"lastName" : "Sanders",
+		"firstName" : "Samantha",
+		"phone" : "801-542-9876",
+		"email" : "SSanders@abcdef.com",
+		"username" : "ssanders",
+		"password" : "password"
+	},
+	{
+		"subscriberKey" : 4,
+		"lastName" : "Jimenez",
+		"firstName" : "Jose",
+		"phone" : "801-542-5432",
+		"email" : "JJimenez@abcdef.com",
+		"username" : "jjimenez",		
+		"password" : "password"
+	},
+	{
+		"subscriberKey" : 5,
+		"lastName" : "Lamont",
+		"firstName" : "Lucy",
+		"phone" : "801-542-1212",
+		"email" : "LLamont@abcdef.com",
+		"username" : "llamont",		
+		"password" : "password"
+	},
+	{
+		"subscriberKey" : 6,
+		"lastName" : "Wong",
+		"firstName" : "Walter",
+		"phone" : "801-542-9898",
+		"email" : "WWong@abcdef.com",
+		"username" : "wwong",		
+		"password" : "password"
+	},
+	{
+		"subscriberKey" : 7,
+		"lastName" : "Publishing",
+		"firstName" : "ABC Subscription",
+		"phone" : "801-542-1200",
+		"email" : "email@abc-subscription.media",
+		"username" : "abc-subscription.media",		
+		"password" : "password"
+	}
+]

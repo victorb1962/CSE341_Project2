@@ -1,4 +1,7 @@
-# Project: Week 6 - 8
+# Final Project: Week 9 - 14
+## Magazine Subscription API
+
+### Project Plan: https://github.com/victorb1962/CSE341-Project-Final/blob/main/docs/CSE341_Group%207_Final%20Team%20Project%20Proposal.pdf
 
 ## Video Explanation
 
@@ -6,20 +9,18 @@ https://youtu.be/AIi1gZOsRmY)
 
 ## Vic's notes
 
-I'm using an artwork database I used for an earlier course.
+I'm based this project on a simple magazine database I used for an earlier course and built it out for this project.
 
 ## How to run it
 
 Run npm install and npm start from the backend folder in the terminal
 
-- Run the following in the terminal:
+- Run the following in the local terminal:
 - npm install
-- npm install mongodb express dotenv
-- npm install axios passport passport-github2 cookie-session validatorjs
+- npm install mongodb express dotenv validatorjs
 - npm install body-parser --save
 - npm install express-validator cors --save
 - npm install express express-openid-connect --save
-
 - npm install joi joi-password-complexity
 
 - npm install --save-dev swagger-autogen See https://www.npmjs.com/package/swagger-autogen
@@ -38,9 +39,11 @@ Start MongoDB connection in VS Code
 Don't forget to create the .env file. If you are unsure of how to do this, watch the stretch solution video.
 
 Environmental Variables required for:
+
 - MongoDB connection
-- Github authentication
-- Auhto0 authentication - if used
+- Swagger connection
+- Auth0 authentication
+- JWT authentication - if used instead of Auht0
 
 ## Testing
 
@@ -52,14 +55,15 @@ Test the endpoints in the routes.rest file with Rest Client or another similar t
 
    - Use routes.rest
      http://localhost:3000/api-docs
-     http://localhost:3000/artwork
-     http://localhost:3000/contact
+     http://localhost:3000/magazine
+     http://localhost:3000/subscriber
 
 2. Test validation rules with:
 
-   - GET / contact /
-   - GET / contact / {id}
-   - GET / contact / POST, PUT, DELETE
+   - GET / subscriber /
+   - GET / subscriber / {id}
+   - GET / subscriber / POST, PUT, DELETE
+   - POST / subscriber / < test for password pattern>
 
 3. Before uploading to GitHub run the following to make sure you have no issues
 
@@ -73,27 +77,29 @@ Test the endpoints in the routes.rest file with Rest Client or another similar t
 
 6. Browser test (productionl):
 
-   https://victor-341w05.onrender.com/api-docs
-   https://victor-341w05.onrender.com/artwork
-   https://victor-341w05.onrender.com/contact
+   https://cse341-final-in8m.onrender.com/api-docs
+   https://cse341-final-in8m.onrender.com/magazine
+   https://cse341-final-in8m.onrender.com/subscriber
 
 7. Test validation rules with:
 
-   - GET / contact /
-   - GET / contact / {id}
-   - GET / contact / POST, PUT, DELETE
+   - GET / subscriber /
+   - GET / subscriber / {id}
+   - GET / subscriber / POST, PUT, DELETE < test for password pattern>
+
+# Related Assignment Lessons
 
 ## Week 6 - Validation & Error Handling
 
 ### Assignment Steps
 
 - Add PUT (UPDATE) and DELETE routes to your API. Verify in MongoDB that these work as intended.
-  -- See \controller\contact.js
+  -- See \controller\subscriber.js
   -- See \config\ for validation config file
-  -- See \controller\contact.js
+  -- See \controller\subscriber.js
 - Add validation to your routes
 - Add error handling to your routes
-  -- All validation handled in controllers\contact.js
+  -- All validation handled in controllers\subscriber.js
 - Update your swagger API documentation to include these changes
 - Push to GitHub.
 - Publish to Render.
@@ -132,7 +138,7 @@ Test the endpoints in the routes.rest file with Rest Client or another similar t
 
 ## Week 8 - Auth0 continued
 
-w08_personal_alt was an attempt to use advanced feature trying to integrator with GitHub but due to time and 
+w08_personal_alt was an attempt to use advanced feature trying to integrator with GitHub but due to time and
 so many other consreations, I had to abandon this and rol back to my w07_personal working solution.
 
 ### Final checklist

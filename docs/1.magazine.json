@@ -1,0 +1,90 @@
+[
+	{
+		"magazineKey" : 1,
+		"title" : "Fishing in the Mojave",
+		"category" : ["Sports", "Travel"],
+		"price" : 13.95,
+		"pubDate" : {
+  		  "$date": "2011-03-01T08:00:00.000Z"
+  		},
+  		"publisher" : "abc-subscription.media",
+		"url" : "abc-subscription.media/fishinginthemojave.com"
+	},
+	{
+		"magazineKey" : 2,
+		"title" : "Car Racing Made Easy",
+		"category" : ["Automotive", "Sports"],
+		"price" : 15.45,
+		"pubDate" : {
+  		  "$date": "2011-03-01T08:00:00.000Z"
+  		},
+		"publisher" : "abc-subscription.media",
+		"url" : "abc-subscription.media/carracingmadeeasy.com"
+	},
+	{
+		"magazineKey" : 3,
+		"title" : "Pine Cone Computing",
+		"category" : ["Technology"],		
+		"price" : 17.50,
+		"pubDate" : {
+  		  "$date": "2011-03-01T08:00:00.000Z"
+  		},
+		"publisher" : "abc-subscription.media",
+		"url" : "abc-subscription.media/pineconecomputing.com"
+	},
+	{
+		"magazineKey" : 4,
+		"title" : "Cooking Like Mad",
+		"category" : ["Cooking"],		
+		"price" : 18.00,
+		"pubDate" : {
+  		  "$date": "2011-03-01T08:00:00.000Z"
+  		},
+		"publisher" : "abc-subscription.media",
+		"url" : "abc-subscription.media/cookinglikemad.com"
+	},
+	{
+		"magazineKey" : 5,
+		"title" : "If Only I Could Sing",
+		"category" : ["Cultural", "Entertainment"],		
+		"price" : 12.45,
+		"pubDate" : {
+  		  "$date": "2011-12-01T08:00:00.000Z"
+  		},
+		"publisher" : "abc-subscription.media",
+		"url" : "abc-subscription.media/ifonlyicouldsing.com"
+	},
+	{
+		"magazineKey" : 6,
+		"title" : "Beautiful Birds",
+		"category" : ["Pet"],		
+		"price" : 12.45,
+		"pubDate" : {
+  		  "$date": "2012-02-01T08:00:00.000Z"
+  		},
+		"publisher" : "abc-subscription.media",
+		"url" : "abc-subscription.media/beautifulbirds.com"
+	},
+	{
+		"magazineKey" : 7,
+		"title" : "Corn Shucking for Fun and Profit",
+		"category" : ["Business", "Entertainment"],		
+		"price" : 15.05,
+		"pubDate" : {
+  		  "$date": "2012-08-01T08:00:00.000Z"
+  		},
+		"publisher" : "abc-subscription.media",
+		"url" : "abc-subscription.media/cornshuckingforfunandprofit.com"
+	},
+	{
+		"magazineKey" : 8,
+		"title" : "MySQL Magic",
+		"category" : ["Technology"],		
+		"price" : 10.95,
+		"pubDate" : {
+  		  "$date": "2012-02-01T08:00:00.000Z"
+  		},
+		"publisher" : "abc-subscription.media",
+		"url" : "abc-subscription.media/mysqlmagic.com"
+	}
+]

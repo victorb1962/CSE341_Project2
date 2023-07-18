@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('../swaggerDesign.json'); // use custom json
-// const swaggerDocument = require('../swagger.json');    // use generated json - npm run swagger
+// use custom json
+const swaggerDocument = require('../swaggerDesign.json'); 
+// use generated json - npm run swagger
+// const swaggerDocument = require('../swagger.json');    
 router.use('/api-docs', swaggerUi.serve);
 router.use(
   '/api-docs',

@@ -1,12 +1,12 @@
-const validator = require('../helpers/validate');
+const validator = require('../config/validate');
 
-const saveContact = (req, res, next) => {
+const saveSubscriber = (req, res, next) => {
   const validationRule = {
-    firstName: 'required|string',
+    subscriberKey: 'required|numeric',
     lastName: 'required|string',
-    email: 'required|email',
+    firstName: 'required|string',
     phone: 'required|string',
-    role: 'required|string',
+    email: 'required|email',
     username: 'required|string',
     password: 'required|string'
   };
@@ -23,16 +23,15 @@ const saveContact = (req, res, next) => {
   });
 };
 
-const saveArtwork = (req, res, next) => {
+const saveMagazine = (req, res, next) => {
   const validationRule = {
-    artTitle: 'required|string',
-    artYear: 'required|string',
-    artPeriod: 'required|string',
-    artDesc: 'required|string',
-    artType: 'required|string',
-    artLocation: 'required|string',
-    artDonated: 'required|string',
-    artFile: 'required|string'
+    magazineKey: 'required|numeric',
+    title: 'required|string',
+    category: 'required|string',
+    price: 'required|numeric',
+    pubDate: 'required|date',
+    publisher: 'required|string',
+    url: 'required|string'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -48,6 +47,6 @@ const saveArtwork = (req, res, next) => {
 };
 
 module.exports = {
-  saveContact,
-  saveArtwork
+  saveSubscriber,
+  saveMagazine
 };
